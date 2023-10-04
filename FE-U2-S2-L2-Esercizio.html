@@ -105,16 +105,45 @@ EXTRAS
 
 <body>
 
-    <nav class="navbar navbar-expand bg-body-tertiary p-0 ">
-        <div class="container mx-3">
-            <a class="navbar-brand" href="#">
-                <img src="logo.png" alt="logo" width="130" height="80">
-            </a>
-            <i class="bi bi-list border rounded px-2 py-1 pagination" style="font-size: 1.85rem!important;"></i>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="logo.png" alt="logo" width="130" height="70"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Saldi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" role="button">
+                            Welcome summer
+                        </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link href=" #" role="button"">Last minute</a>
+                    </li>
+                    <li class=" nav-item">
+                            <a class="nav-link href=" #" role="button"">Recensioni</a>
+                    </li>
+                </ul>
+                <form class=" d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Cerca posti da sogno"
+                                    aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Cerca</button>
+                                </form>
+            </div>
         </div>
     </nav>
 
-    <div class="mx-4">
+    <div class="container">
 
         <header class="bg-body-tertiary my-5 p-4">
 
@@ -135,10 +164,10 @@ EXTRAS
 
         <div class="d-flex justify-content-between mb-4">
             <h2>Saldi</h2>
-            <button>Nascondi sezione</button>
+            <button id="first-hidden">Nascondi sezione</button>
         </div>
 
-        <section class="row g-2">
+        <section class="saldi row g-2">
 
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
 
@@ -215,10 +244,10 @@ EXTRAS
 
         <div class="d-flex justify-content-between mt-5 mb-4">
             <h2>Welcome Summer</h2>
-            <button>Nascondi sezione</button>
+            <button id="second-hidden">Nascondi sezione</button>
         </div>
 
-        <section class="row g-3">
+        <section class="welcome-summer row g-3">
 
             <div class="col-12 col-sm-6 col-lg-4">
 
@@ -346,19 +375,16 @@ EXTRAS
 
         <article class="d-flex flex-column  flex-sm-row row-sm-6">
 
-            <!-- <div class="col col-sm-6"> -->
+            <div class="">
+                <img class="img-fluid rounded-3 shadow-lg " src="paesaggio.jfif" alt="">
+            </div>
 
-                <img class="rounded-4 shadow-lg col-sm-6 col-lg-8" src="paesaggio.jfif" alt="">
-                <div class="ms-3 col-sm-5 col-md-4 col-lg-3">
-                    <h1 class="display-1 mt-2">Porto Fino</h1>
-                    <p>12.08.2024-20.12.2024</p>
-                    <p>Ville a partire da 500€, non fartelo sfuggire!</p>
-                    <button class="bg-dark text-white rounded-5 border-0 px-3">Best offer</button>
-                </div>
-
-            <!-- </div> -->
-
-
+            <div class="ms-3 col-sm-5 col-md-4 col-lg-3">
+                <h1 class="display-1 mt-2">Porto Fino</h1>
+                <p>12.08.2024-20.12.2024</p>
+                <p>Ville a partire da 500€, non fartelo sfuggire!</p>
+                <button class="bg-dark text-white rounded-5 border-0 px-3">Best offer</button>
+            </div>
 
         </article>
 
@@ -366,26 +392,34 @@ EXTRAS
 
         <aside></aside>
 
-        </main>
-
-        <footer></footer>
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 
+    <footer
+        class="container-fluid bg-dark d-flex flex-column justify-content-center align-items-center text-light mt-5 py-5">
+        <button class="btn btn-outline-secondary py-1 px-3">Contattaci</button>
+        <p class="my-3">© 2021 Kalina Travel LTD. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+
+        let saldiButton = document.querySelector("#first-hidden")
+        let saldiBox = document.querySelector(".saldi")
+        saldiButton.addEventListener("click", () => {
+            saldiBox.classList.toggle("collapse")
+        })
+
+        let welcomeSummerButton = document.querySelector("#second-hidden")
+        let welcomeSummerBox = document.querySelector(".welcome-summer")
+        welcomeSummerButton.addEventListener("click", () => {
+            welcomeSummerBox.classList.toggle("collapse")
+        })
+
+
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+
     </script>
 </body>
 
